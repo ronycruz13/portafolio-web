@@ -1,0 +1,33 @@
+<section id="proyectos" class="py-20 px-6 bg-white">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Proyectos</h2>
+    <div class="w-16 h-1 bg-blue-600 mx-auto mb-12"></div>
+
+    @if (cargando) {
+      <p class="text-gray-500">Cargando proyectos...</p>
+    }
+
+    @if (error) {
+      <p class="text-red-500">No se pudieron cargar los proyectos. Intenta más tarde.</p>
+    }
+
+    @if (!cargando && !error && proyectos.length === 0) {
+      <p class="text-gray-500">Aún no hay repositorios públicos para mostrar.</p>
+    }
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+      @for (proyecto of proyectos; track proyecto.id) {
+        <div class="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col hover:shadow-md transition">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ proyecto.name }}</h3>
+          <p class="text-gray-600 text-sm mb-4 flex-1">{{ proyecto.description || 'Sin descripción disponible.' }}</p>
+
+          @if (proyecto.language) {
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full mb-4 w-fit">{{ proyecto.language }}</span>
+          }
+
+          <a [href]="proyecto.html_url" target="_blank" class="text-blue-600 font-medium text-sm hover:underline">Ver en GitHub →</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
