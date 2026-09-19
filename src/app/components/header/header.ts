@@ -1,9 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-header',
-  styleUrl: './header.css',
+  imports: [],
   templateUrl: './header.html',
+  styleUrl: './header.css',
 })
-export class Header {}
+export class Header {
+  menuAbierto = signal(false);
+
+  toggleMenu(): void {
+    this.menuAbierto.update((valor) => !valor);
+  }
+
+  cerrarMenu(): void {
+    this.menuAbierto.set(false);
+  }
+}

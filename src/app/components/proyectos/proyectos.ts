@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Github, RepoGithub } from '../../services/github';
 
 @Component({
@@ -8,24 +8,23 @@ import { Github, RepoGithub } from '../../services/github';
   styleUrl: './proyectos.css',
 })
 export class Proyectos implements OnInit {
-  proyectos: RepoGithub[] = [];
-  cargando = true;
-  error = false;
+  proyectos = signal<RepoGithub[]>([]);
+  cargando = signal(true);
+  error = signal(false);
 
   constructor(private githubService: Github) {}
 
   ngOnInit(): void {
     this.githubService.obtenerRepos().subscribe({
       next: (repos) => {
-        this.proyectos = repos;
-        this.cargando = false;
+        this.proyectos.set(repos);
+        this.cargando.set(false);
       },
       error: (err) => {
         console.error('Error al obtener repos:', err);
-        this.error = true;
-        this.cargando = false;
+        this.error.set(true);
+        this.cargando.set(false);
       },
     });
   }
 }
-

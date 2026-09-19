@@ -1,24 +1,36 @@
-<section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center bg-gray-50 px-6 pt-20">
-  <img
-    src="https://via.placeholder.com/160"
-    alt="Foto de perfil"
-    class="w-40 h-40 rounded-full object-cover mb-6 shadow-lg"
-  />
+<nav class="fixed top-0 left-0 w-full bg-[#0a0118]/90 backdrop-blur-md border-b border-purple-500/30 text-white shadow-[0_2px_20px_rgba(168,85,247,0.15)] z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-3">
+      <img src="/images/UniorLogo.png" alt="Logo de la universidad" class="h-10 w-10 object-contain" />
+      <span class="text-xl font-bold bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+        UNIOR - TALLER DE GRADO
+      </span>
+    </div>
 
-  <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-    Hola, soy <span class="text-blue-600">Tu Nombre</span>
-  </h1>
+    <ul class="hidden md:flex gap-6 text-md font-medium ">
+      <li><a href="#inicio" class="hover:text-cyan-400 transition">Inicio</a></li>
+      <li><a href="#sobre-mi" class="hover:text-cyan-400 transition">Sobre mí</a></li>
+      <li><a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos</a></li>
+      <li><a href="#habilidades" class="hover:text-cyan-400 transition">Habilidades</a></li>
+      <li><a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a></li>
+    </ul>
 
-  <p class="text-lg md:text-xl text-gray-600 max-w-xl mb-8">
-    Estudiante de Programación apasionado por crear soluciones web con Angular.
-  </p>
-
-  <div class="flex gap-4">
-    <a href="#proyectos" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
-      Ver Proyectos
-    </a>
-    <a href="/cv.pdf" target="_blank" class="border border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
-      Descargar CV
-    </a>
+    <button (click)="toggleMenu()" class="md:hidden text-2xl text-purple-400" aria-label="Abrir menú">
+      @if (menuAbierto()) {
+        ✕
+      } @else {
+        ☰
+      }
+    </button>
   </div>
-</section>
+
+  @if (menuAbierto()) {
+    <ul class="md:hidden flex flex-col bg-[#0a0118] px-6 pb-4 gap-3 text-sm font-medium border-t border-purple-500/20">
+      <li><a href="#inicio" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Inicio</a></li>
+      <li><a href="#sobre-mi" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Sobre mí</a></li>
+      <li><a href="#proyectos" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Proyectos</a></li>
+      <li><a href="#habilidades" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Habilidades</a></li>
+      <li><a href="#contacto" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Contacto</a></li>
+    </ul>
+  }
+</nav>
