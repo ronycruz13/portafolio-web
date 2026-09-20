@@ -1,8 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
 
+:root {
+  --color-ink: #0a0118;
+  --color-surface: #130f2e;
+  --color-text: #f8fafc;
+  --color-muted: #a8b0c2;
+  --color-purple: #a855f7;
+  --color-cyan: #22d3ee;
+  --page-padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 body {
-  background-color: #0a0118;
-  color: #f1f5f9;
+  min-width: 320px;
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(168 85 247 / 0.45);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 4px;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  cursor: pointer;
 }

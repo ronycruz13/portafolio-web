@@ -1,11 +1,11 @@
-<nav class="fixed top-0 left-0 w-full bg-[#0a0118]/90 backdrop-blur-md border-b border-purple-500/30 text-white shadow-[0_2px_20px_rgba(168,85,247,0.15)] z-50">
+<nav aria-label="Navegación principal" class="fixed top-0 left-0 w-full bg-[#0a0118]/90 backdrop-blur-md border-b border-purple-500/30 text-white shadow-[0_2px_20px_rgba(168,85,247,0.15)] z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-    <div class="flex items-center gap-3">
-      <img src="/images/UniorLogo.png" alt="Logo de la universidad" class="h-10 w-10 object-contain" />
-      <span class="text-xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">UNIOR - TALLER DE GRADO</span>
+    <div class="header-brand flex items-center gap-3">
+      <img src="/images/UniorLogo.png" alt="Logo de la universidad" class="header-brand-logo h-10 w-10 object-contain" />
+      <span class="header-brand-text text-xl font-bold bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">UNIOR - TALLER DE GRADO</span>
     </div>
 
-    <ul class="hidden md:flex gap-6 text-sm font-medium">
+    <ul class="hidden md:flex gap-6 text-base font-medium">
       <li><a routerLink="/" routerLinkActive="text-cyan-400" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-cyan-400 transition">Inicio</a></li>
       <li><a routerLink="/sobre-mi" routerLinkActive="text-cyan-400" class="hover:text-cyan-400 transition">Sobre mí</a></li>
       <li><a routerLink="/proyectos" routerLinkActive="text-cyan-400" class="hover:text-cyan-400 transition">Proyectos</a></li>
@@ -13,7 +13,7 @@
       <li><a routerLink="/contacto" routerLinkActive="text-cyan-400" class="hover:text-cyan-400 transition">Contacto</a></li>
     </ul>
 
-    <button (click)="toggleMenu()" class="md:hidden text-2xl text-purple-400" aria-label="Abrir menú">
+    <button (click)="toggleMenu()" class="md:hidden text-2xl text-purple-400" [attr.aria-expanded]="menuAbierto()" [attr.aria-label]="menuAbierto() ? 'Cerrar menú' : 'Abrir menú'">
       @if (menuAbierto()) {
         ✕
       } @else {
@@ -23,7 +23,7 @@
   </div>
 
   @if (menuAbierto()) {
-    <ul class="md:hidden flex flex-col bg-[#0a0118] px-6 pb-4 gap-3 text-sm font-medium border-t border-purple-500/20">
+    <ul class="md:hidden flex flex-col bg-[#0a0118] px-6 pb-4 gap-3 text-base font-medium border-t border-purple-500/20">
       <li><a routerLink="/" routerLinkActive="text-cyan-400" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Inicio</a></li>
       <li><a routerLink="/sobre-mi" routerLinkActive="text-cyan-400" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Sobre mí</a></li>
       <li><a routerLink="/proyectos" routerLinkActive="text-cyan-400" (click)="cerrarMenu()" class="block py-2 hover:text-cyan-400 transition">Proyectos</a></li>

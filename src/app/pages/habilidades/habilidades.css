@@ -1,0 +1,136 @@
+.habilidades-section {
+  isolation: isolate;
+}
+
+.habilidades-orb {
+  animation: habilidades-orb 9s ease-in-out infinite alternate;
+}
+
+.habilidades-orb-cyan {
+  animation-delay: -4s;
+}
+
+.habilidades-reveal,
+#habilidades .grid > div {
+  animation: habilidades-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#habilidades .grid > div:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+#habilidades .grid > div:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+#habilidades .grid > div:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+#habilidades .grid > div:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+#habilidades .grid > div:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+#habilidades .grid > div:nth-child(7) {
+  animation-delay: 600ms;
+}
+
+#habilidades .grid > div:nth-child(8) {
+  animation-delay: 700ms;
+}
+
+.habilidades-title {
+  background-size: 180% auto;
+  animation: habilidades-gradient 4s ease-in-out infinite;
+}
+
+.habilidades-divider {
+  box-shadow: 0 0 8px rgb(168 85 247 / 0.7), 0 0 20px rgb(34 211 238 / 0.35);
+  animation: habilidades-divider 3s ease-in-out infinite;
+}
+
+#habilidades .grid > div {
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+#habilidades .grid > div:hover {
+  transform: translateY(-8px);
+}
+
+#habilidades .grid > div img {
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+#habilidades .grid > div:hover img {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0 0 10px rgb(34 211 238 / 0.5));
+}
+
+@keyframes habilidades-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes habilidades-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes habilidades-orb {
+  from {
+    transform: translate3d(-12px, 10px, 0) scale(0.94);
+    opacity: 0.55;
+  }
+
+  to {
+    transform: translate3d(12px, -10px, 0) scale(1.06);
+    opacity: 0.95;
+  }
+}
+
+@keyframes habilidades-divider {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scaleX(1.25);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .habilidades-orb,
+  .habilidades-reveal,
+  .habilidades-title,
+  .habilidades-divider,
+  #habilidades .grid > div,
+  #habilidades .grid > div img {
+    animation: none;
+    transition: none;
+  }
+
+  #habilidades .grid > div:hover,
+  #habilidades .grid > div:hover img {
+    transform: none;
+  }
+}
