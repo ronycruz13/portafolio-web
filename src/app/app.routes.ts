@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { Inicio } from './components/inicio/inicio';
-import { SobreMi } from './components/sobre-mi/sobre-mi';
-import { Habilidades } from './components/habilidades/habilidades';
-import { Proyectos } from './components/proyectos/proyectos';
-import { Contacto } from './components/contacto/contacto';
+import { Inicio } from './pages/inicio/inicio';
+import { SobreMi } from './pages/sobre-mi/sobre-mi';
+import { Habilidades } from './pages/habilidades/habilidades';
+import { Proyectos } from './pages/proyectos/proyectos';
+import { Contacto } from './pages/contacto/contacto';
 
 export const routes: Routes = [
   { path: '', component: Inicio },
