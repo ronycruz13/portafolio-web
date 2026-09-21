@@ -1,43 +1,48 @@
-<section id="contacto" class="contacto-section py-20 px-6 bg-[#0a0118] relative overflow-hidden">
-  <div class="contacto-orb contacto-orb-purple absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-  <div class="contacto-orb contacto-orb-cyan absolute top-0 left-1/4 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl"></div>
+<section id="contacto" class="contacto-section py-20 px-6 bg-[#071018] relative overflow-hidden">
+  <div class="contacto-grid absolute inset-0" aria-hidden="true"></div>
+  <div class="contacto-orb contacto-orb-purple absolute bottom-0 right-1/4 w-96 h-96 bg-lime-400/10 rounded-full blur-3xl"></div>
+  <div class="contacto-orb contacto-orb-cyan absolute top-0 left-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
 
-  <div class="max-w-xl mx-auto text-center relative z-10">
-    <h2 class="contacto-reveal text-3xl font-bold text-white mb-4">
-      Con<span class="contacto-title bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">tacto</span>
-    </h2>
-    <div class="contacto-divider w-16 h-1 bg-linear-to-r from-purple-500 to-cyan-500 mx-auto mb-12 rounded-full"></div>
+  <div class="contacto-layout max-w-5xl mx-auto relative z-10">
+    <div class="contacto-intro">
+      <p class="contacto-kicker">/ canal abierto</p>
+      <h2 class="contacto-reveal text-4xl md:text-5xl font-bold text-white mb-4">
+        Con<span class="contacto-title bg-linear-to-r from-cyan-300 to-lime-300 bg-clip-text text-transparent">tacto</span>
+      </h2>
+      <p class="contacto-description">¿Tienes una idea o un proyecto en mente? Envíame un mensaje y construyamos algo útil, claro y diferente.</p>
+      <div class="contacto-status"><span></span> disponible para nuevos proyectos</div>
+    </div>
 
     @if (enviado) {
       <p class="contacto-success text-cyan-400 font-medium mb-6">¡Mensaje enviado! Te responderé pronto.</p>
     }
 
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="contacto-form text-left space-y-5">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="contacto-form text-left">
       <div>
-        <label class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
-        <input type="text" formControlName="nombre" class="w-full bg-[#130f2e] border border-purple-500/30 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+        <label for="nombre" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre" placeholder="Tu nombre" class="contacto-input w-full text-white px-4 py-3" />
         @if (formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched) {
           <p class="text-red-400 text-xs mt-1">Ingresa un nombre válido (mínimo 2 caracteres).</p>
         }
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-        <input type="email" formControlName="email" class="w-full bg-[#130f2e] border border-purple-500/30 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="tu@email.com" class="contacto-input w-full text-white px-4 py-3" />
         @if (formulario.get('email')?.invalid && formulario.get('email')?.touched) {
           <p class="text-red-400 text-xs mt-1">Ingresa un email válido.</p>
         }
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
-        <textarea formControlName="mensaje" rows="4" class="w-full bg-[#130f2e] border border-purple-500/30 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
+        <label for="mensaje" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
+        <textarea id="mensaje" formControlName="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto" class="contacto-input w-full text-white px-4 py-3"></textarea>
         @if (formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched) {
           <p class="text-red-400 text-xs mt-1">El mensaje debe tener al menos 10 caracteres.</p>
         }
       </div>
 
-      <button type="submit" class="contacto-button w-full bg-linear-to-r from-purple-500 to-blue-500 text-white py-3 rounded-lg font-medium hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transition">Enviar mensaje</button>
+      <button type="submit" class="contacto-button w-full text-slate-950 py-3 font-bold transition">Enviar mensaje <span aria-hidden="true">-></span></button>
     </form>
   </div>
 </section>

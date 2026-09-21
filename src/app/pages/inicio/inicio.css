@@ -1,3 +1,301 @@
+.inicio-hero {
+  display: grid;
+  align-items: center;
+  isolation: isolate;
+  min-height: 100svh;
+  padding: 6rem clamp(1.5rem, 7vw, 7rem) 3rem;
+  background: #070b16;
+  color: #f8fafc;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.inicio-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+  opacity: 0.3;
+  background-image: linear-gradient(rgb(72 215 190 / 0.1) 1px, transparent 1px), linear-gradient(90deg, rgb(72 215 190 / 0.1) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(90deg, black, transparent 85%);
+}
+
+.inicio-scanline {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 0.35;
+  background: repeating-linear-gradient(0deg, transparent 0, transparent 4px, rgb(255 255 255 / 0.018) 5px);
+  pointer-events: none;
+}
+
+.inicio-content {
+  position: relative;
+  z-index: 2;
+  width: min(42rem, 46vw);
+  margin-left: clamp(2rem, 7vw, 8rem);
+  padding: 2rem 0 2rem 0;
+  text-align: left;
+  transform: none;
+}
+
+.inicio-content h1 {
+  max-width: 50rem;
+  margin: 0.8rem 0 1.25rem;
+  font-size: clamp(2.5rem, 5vw, 5.25rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.inicio-eyebrow {
+  margin: 0;
+  color: #b8f45c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-align: left;
+}
+
+.inicio-name {
+  color: #55d8ff;
+  text-shadow: 0 0 2rem rgb(85 216 255 / 0.35);
+}
+
+.inicio-description {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  color: #aeb9c9;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.inicio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+
+.inicio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.25rem;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid;
+  border-radius: 0.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.inicio-button:hover {
+  transform: translateY(-3px);
+}
+
+.inicio-button-primary {
+  border-color: #b8f45c;
+  background: #b8f45c;
+  color: #08110d;
+  box-shadow: 0 0 1.5rem rgb(184 244 92 / 0.2);
+}
+
+.inicio-button-primary:hover {
+  box-shadow: 0 0 2rem rgb(184 244 92 / 0.45);
+}
+
+.inicio-button-secondary {
+  border-color: rgb(85 216 255 / 0.65);
+  color: #d8f6ff;
+}
+
+.inicio-button-secondary:hover {
+  background: rgb(85 216 255 / 0.1);
+  box-shadow: 0 0 1.5rem rgb(85 216 255 / 0.2);
+}
+
+.inicio-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+  color: #647386;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+.inicio-tech-stack span::before {
+  margin-right: 0.55rem;
+  color: #55d8ff;
+  content: '//';
+}
+
+.inicio-photo-frame {
+  position: absolute;
+  right: clamp(2rem, 10vw, 8rem);
+  bottom: 0;
+  left: auto;
+  z-index: 1;
+  width: min(48vw, 44rem);
+  height: min(84vh, 54rem);
+}
+
+.inicio-tech-orbit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.inicio-tech-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.45rem;
+  border: 1px solid rgb(184 244 92 / 0.35);
+  border-radius: 1rem;
+  background: rgb(11 22 29 / 0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 1.2rem rgb(85 216 255 / 0.12);
+  animation: inicio-tech-float 4.5s ease-in-out infinite;
+}
+
+.inicio-tech-item img {
+  width: clamp(2.1rem, 2vw, 2.8rem);
+  height: auto;
+  display: block;
+}
+
+.inicio-tech-item span {
+  color: #dff9ff;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.inicio-tech-ts {
+  top: 18%;
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.inicio-tech-angular {
+  right: 8%;
+  top: 16%;
+  animation-delay: 0.5s;
+}
+
+.inicio-tech-js {
+  left: 6%;
+  top: 46%;
+  animation-delay: 1s;
+}
+
+.inicio-tech-tailwind {
+  right: 4%;
+  top: 38%;
+  animation-delay: 1.5s;
+}
+
+.inicio-tech-sql {
+  left: 8%;
+  bottom: 12%;
+  animation-delay: 2s;
+}
+
+.inicio-tech-node {
+  right: 0%;
+  top: 66%;
+  animation-delay: 2.5s;
+}
+
+.inicio-background-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 2.5rem rgb(85 216 255 / 0.28));
+  pointer-events: none;
+}
+
+.inicio-corner {
+  position: absolute;
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  border-color: #b8f45c;
+  border-style: solid;
+}
+
+.inicio-corner-top {
+  top: 8%;
+  left: 12%;
+  border-width: 1px 0 0 1px;
+}
+
+.inicio-corner-bottom {
+  right: 8%;
+  bottom: 9%;
+  border-width: 0 1px 1px 0;
+}
+
+.inicio-photo-glow {
+  position: absolute;
+  isolation: isolate;
+  z-index: -2;
+  right: 17%;
+  bottom: 8%;
+  left: auto;
+  width: min(42vw, 38rem);
+  height: min(68vh, 42rem);
+  border-radius: 50%;
+  background: rgb(85 216 255 / 0.18);
+  filter: blur(6rem);
+  pointer-events: none;
+}
+
+.inicio-unior-signature {
+  position: absolute;
+  left: clamp(1.5rem, 4vw, 3rem);
+  bottom: clamp(0.75rem, 2vh, 2rem);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: max-content;
+  color: #d8f6ff;
+  text-align: center;
+}
+
+.inicio-unior-logo {
+  width: clamp(3.5rem, 7vw, 7rem);
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 1rem rgb(184 244 92 / 0.35));
+  pointer-events: none;
+}
+
+.inicio-unior-signature p {
+  margin: 0;
+  color: #b8f45c;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.75rem, 1.1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-shadow: 0 0 0.8rem rgb(184 244 92 / 0.35);
+}
+
 .inicio-fade-in {
   animation: inicio-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -18,41 +316,34 @@
   animation-delay: 460ms;
 }
 
-.inicio-photo {
-  animation: inicio-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both,
-    inicio-float 5s ease-in-out 1s infinite,
-    inicio-neon-pulse 3.5s ease-in-out 1s infinite;
-}
-
-.inicio-name {
-  background-size: 200% auto;
-  animation: inicio-gradient 5s ease-in-out infinite;
+.inicio-background-photo {
+  animation: inicio-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
 }
 
 .inicio-glow {
-  animation: inicio-glow 8s ease-in-out infinite alternate;
-  box-shadow: 0 0 35px currentColor, 0 0 90px currentColor;
-  opacity: 0.8;
+  position: absolute;
+  z-index: -2;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(6rem);
+  opacity: 0.18;
 }
 
 .inicio-glow-purple {
-  color: rgb(147 51 234 / 0.55);
+  top: 8%;
+  right: 12%;
+  background: #6d4aff;
 }
 
 .inicio-glow-cyan {
-  color: rgb(6 182 212 / 0.55);
-}
-
-.inicio-glow-cyan {
-  animation-delay: -4s;
+  right: 8%;
+  bottom: 8%;
+  background: #55d8ff;
 }
 
 #inicio a {
-  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
-}
-
-#inicio a:hover {
-  transform: translateY(-3px);
+  cursor: pointer;
 }
 
 @keyframes inicio-fade-in {
@@ -78,49 +369,59 @@
   }
 }
 
-@keyframes inicio-gradient {
+@keyframes inicio-tech-float {
   0%,
   100% {
-    background-position: 0% 50%;
+    transform: translateY(0) scale(1);
   }
 
   50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes inicio-glow {
-  from {
-    transform: translate3d(-10px, 8px, 0) scale(0.95);
-    opacity: 0.65;
-  }
-
-  to {
-    transform: translate3d(10px, -8px, 0) scale(1.05);
-    opacity: 1;
+    transform: translateY(-8px) scale(1.04);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .inicio-fade-in,
-  .inicio-photo,
-  .inicio-name,
+  .inicio-background-photo,
   .inicio-glow {
     animation: none;
   }
 
-  #inicio a {
+  .inicio-button {
     transition: none;
   }
 }
 
-@keyframes inicio-neon-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgb(168 85 247 / 0.35), 0 0 45px rgb(6 182 212 / 0.15);
+@media (max-width: 767px) {
+  .inicio-hero {
+    display: block;
+    padding-top: 6rem;
   }
 
-  50% {
-    box-shadow: 0 0 30px rgb(168 85 247 / 0.65), 0 0 65px rgb(6 182 212 / 0.3);
+  .inicio-photo-frame {
+    top: 5rem;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    opacity: 0.32;
+  }
+
+  .inicio-content {
+    width: 100%;
+    padding: 4rem 0 3rem;
+    transform: none;
+  }
+
+  .inicio-content h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .inicio-description {
+    max-width: 25rem;
+  }
+
+  .inicio-tech-stack {
+    margin-top: 2rem;
   }
 }

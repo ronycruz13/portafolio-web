@@ -1,3 +1,45 @@
+.futuristic-header {
+  isolation: isolate;
+  background-color: rgb(7 16 24 / 0.94);
+  background-image: linear-gradient(rgb(34 211 238 / 0.045) 1px, transparent 1px), linear-gradient(90deg, rgb(34 211 238 / 0.045) 1px, transparent 1px);
+  background-size: 52px 52px;
+  border-bottom-color: rgb(34 211 238 / 0.28);
+  box-shadow: 0 0.15rem 1.25rem rgb(0 0 0 / 0.35);
+}
+
+.futuristic-header::after {
+  position: absolute;
+  right: 8%;
+  bottom: -1px;
+  left: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #67e8f9, #a3e635, transparent);
+  box-shadow: 0 0 12px rgb(34 211 238 / 0.6);
+  content: '';
+  pointer-events: none;
+}
+
+.futuristic-header a {
+  color: #cbd5e1;
+  transition: color 200ms ease, text-shadow 200ms ease;
+}
+
+.futuristic-header a:hover,
+.futuristic-header a.text-cyan-400 {
+  color: #67e8f9;
+  text-shadow: 0 0 10px rgb(34 211 238 / 0.65);
+}
+
+.futuristic-header button {
+  color: #67e8f9;
+  text-shadow: 0 0 10px rgb(34 211 238 / 0.55);
+}
+
+.futuristic-header > ul {
+  border-color: rgb(34 211 238 / 0.2);
+  background-color: rgb(7 16 24 / 0.98);
+}
+
 .header-brand-logo {
   animation: header-logo-glow 3s ease-in-out infinite;
   filter: drop-shadow(0 0 4px rgb(250 204 21 / 0.45));

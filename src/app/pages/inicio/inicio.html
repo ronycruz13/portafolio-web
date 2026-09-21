@@ -1,19 +1,64 @@
-<section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center bg-[#0a0118] px-6 pt-20 relative overflow-hidden">
-  <div class="inicio-glow inicio-glow-purple absolute top-1/4 left-1/4 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>
-  <div class="inicio-glow inicio-glow-cyan absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
+<section id="inicio" class="inicio-hero min-h-screen relative overflow-hidden">
+  <div class="inicio-grid" aria-hidden="true"></div>
+  <div class="inicio-scanline" aria-hidden="true"></div>
+  <div class="inicio-glow inicio-glow-purple" aria-hidden="true"></div>
+  <div class="inicio-glow inicio-glow-cyan" aria-hidden="true"></div>
+  <div class="inicio-photo-glow" aria-hidden="true"></div>
 
-  <img src="/images/FotoPersonal.png" alt="Foto de perfil" class="inicio-fade-in inicio-delay-1 inicio-photo w-50 h-70 rounded-full object-cover mb-6 shadow-[0_0_30px_rgba(168,85,247,0.4)] border-2 border-purple-500/50 relative z-10" />
+  <div class="inicio-content">
+    <h1 class="inicio-fade-in inicio-delay-2">
+      Hola, soy <span class="inicio-name">Richard Cruz Reynoso</span>
+    </h1>
+    <p class="inicio-fade-in inicio-delay-3 inicio-description">
+      Estudiante de Programación apasionado por crear soluciones web con Angular.
+    </p>
+    <div class="inicio-fade-in inicio-delay-4 inicio-actions">
+      <a href="/proyectos" class="inicio-button inicio-button-primary">Ver Proyectos <span aria-hidden="true">↗</span></a>
+      <a href="/pdf/CV.pdf" target="_blank" class="inicio-button inicio-button-secondary">Descargar CV <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="inicio-tech-stack" aria-label="Tecnologías principales">
+      <span>ANGULAR</span>
+      <span>TYPESCRIPT</span>
+      <span>FIREBASE</span>
+    </div>
+  </div>
 
-  <h1 class="inicio-fade-in inicio-delay-2 text-4xl md:text-5xl font-bold text-white mb-3 relative z-10">
-    Hola, soy <span class="inicio-name bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">Richard Cruz Reynoso</span>
-  </h1>
+  <div class="inicio-photo-frame" aria-hidden="true">
+    <span class="inicio-corner inicio-corner-top"></span>
 
-  <p class="inicio-fade-in inicio-delay-3 text-lg md:text-xl text-gray-400 max-w-xl mb-8 relative z-10">
-    Estudiante de Programación apasionado por crear soluciones web con Angular.
-  </p>
+    <div class="inicio-tech-orbit">
+      <div class="inicio-tech-item inicio-tech-ts">
+        <img src="/images/habilidades/TypeScript.png" alt="TypeScript" />
+        <span>TS</span>
+      </div>
+      <div class="inicio-tech-item inicio-tech-angular">
+        <img src="/images/habilidades/Angular.png" alt="Angular" />
+        <span>Angular</span>
+      </div>
+      <div class="inicio-tech-item inicio-tech-js">
+        <img src="/images/habilidades/JavaScript.png" alt="JavaScript" />
+        <span>JS</span>
+      </div>
+      <div class="inicio-tech-item inicio-tech-tailwind">
+        <img src="/images/habilidades/TailwindCSS.png" alt="Tailwind CSS" />
+        <span>Tailwind</span>
+      </div>
+      <div class="inicio-tech-item inicio-tech-sql">
+        <img src="/images/habilidades/SQL.png" alt="SQL" />
+        <span>SQL</span>
+      </div>
+      <div class="inicio-tech-item inicio-tech-node">
+        <img src="/images/habilidades/NodeJS.png" alt="Node.js" />
+        <span>Node</span>
+      </div>
+    </div>
 
-  <div class="inicio-fade-in inicio-delay-4 flex gap-4 relative z-10">
-    <a href="#proyectos" class="bg-linear-to-r from-purple-500 to-blue-500 text-black px-6 py-3 rounded-lg font-bold hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transition">Ver Proyectos</a>
-    <a href="/pdf/CV.pdf" target="_blank" class="border border-purple-400/50 text-gray-200 px-6 py-3 rounded-lg font-medium hover:bg-purple-500/10 transition">Descargar CV</a>
+    <img src="/images/FotoPersonal.png" alt="" class="inicio-fade-in inicio-delay-1 inicio-background-photo" />
+    <span class="inicio-corner inicio-corner-bottom"></span>
+  </div>
+
+  <div class="inicio-unior-signature">
+    <img src="/images/UniorLogo.png" alt="Escudo de Unior" class="inicio-unior-logo" />
+    <p>Ing. David Morales Vega</p>
   </div>
 </section>

@@ -1,5 +1,16 @@
 .habilidades-section {
   isolation: isolate;
+  background: #071018;
+}
+
+.habilidades-section::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgb(34 211 238 / 0.055) 1px, transparent 1px), linear-gradient(90deg, rgb(34 211 238 / 0.055) 1px, transparent 1px);
+  background-size: 52px 52px;
+  content: '';
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+  pointer-events: none;
 }
 
 .habilidades-orb {
@@ -44,7 +55,11 @@
 }
 
 .habilidades-title {
+  background: linear-gradient(100deg, #67e8f9, #a3e635);
+  -webkit-background-clip: text;
+  background-clip: text;
   background-size: 180% auto;
+  color: transparent;
   animation: habilidades-gradient 4s ease-in-out infinite;
 }
 
@@ -54,11 +69,31 @@
 }
 
 #habilidades .grid > div {
+  position: relative;
+  min-height: 11rem;
+  border: 1px solid rgb(34 211 238 / 0.2);
+  border-radius: 0.5rem;
+  background: linear-gradient(145deg, rgb(10 30 40 / 0.92), rgb(5 17 23 / 0.92));
+  box-shadow: inset 0 1px rgb(255 255 255 / 0.04), 0 1rem 2rem rgb(0 0 0 / 0.18);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
 #habilidades .grid > div:hover {
+  border-color: rgb(163 230 53 / 0.8);
+  box-shadow: 0 0 1.5rem rgb(34 211 238 / 0.14), 0 1rem 2rem rgb(0 0 0 / 0.24);
   transform: translateY(-8px);
+}
+
+#habilidades .grid > div::after {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: #a3e635;
+  box-shadow: 0 0 0.65rem #a3e635;
+  content: '';
 }
 
 #habilidades .grid > div img {
@@ -132,5 +167,16 @@
   #habilidades .grid > div:hover,
   #habilidades .grid > div:hover img {
     transform: none;
+  }
+}
+
+@media (max-width: 639px) {
+  #habilidades .grid {
+    gap: 0.75rem;
+  }
+
+  #habilidades .grid > div {
+    min-height: 9.5rem;
+    padding: 1rem;
   }
 }
