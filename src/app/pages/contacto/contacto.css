@@ -113,11 +113,6 @@
   animation: contacto-gradient 4s ease-in-out infinite;
 }
 
-.contacto-divider {
-  box-shadow: 0 0 8px rgb(168 85 247 / 0.7), 0 0 20px rgb(34 211 238 / 0.35);
-  animation: contacto-divider 3s ease-in-out infinite;
-}
-
 .contacto-form > div {
   animation: contacto-field 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }

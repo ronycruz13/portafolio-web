@@ -47,15 +47,6 @@
   letter-spacing: -0.03em;
 }
 
-.inicio-eyebrow {
-  margin: 0;
-  color: #b8f45c;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-align: left;
-}
-
 .inicio-name {
   color: #55d8ff;
   text-shadow: 0 0 2rem rgb(85 216 255 / 0.35);
@@ -224,6 +215,7 @@
   opacity: 0.9;
   filter: drop-shadow(0 0 2.5rem rgb(85 216 255 / 0.28));
   pointer-events: none;
+  animation: inicio-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
 }
 
 .inicio-corner {
@@ -314,10 +306,6 @@
 
 .inicio-delay-4 {
   animation-delay: 460ms;
-}
-
-.inicio-background-photo {
-  animation: inicio-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
 }
 
 .inicio-glow {
