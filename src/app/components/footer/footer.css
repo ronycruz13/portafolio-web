@@ -25,14 +25,14 @@
 
 .futuristic-footer p {
 	color: #94a3b8;
-	font-size: 0.75rem;
+	font-size: 0.89rem;
 	letter-spacing: 0.03em;
 }
 
 .futuristic-footer a {
 	color: #67e8f9;
 	font-family: 'Courier New', monospace;
-	font-size: 0.75rem;
+	font-size: 0.89rem;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	transition: color 200ms ease, text-shadow 200ms ease;
